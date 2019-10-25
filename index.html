@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>thử nhúng ahihi</title>
+	<title>Embed editor</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="public/css/reset.css">
 </head>
@@ -22,7 +22,7 @@
 
 			} else {
 		    // Trình duyệt không hỗ trợ Local storage.
-		    alert("trình duyệt bạn không được hỗ trợ!");
+		    alert("Your browser not support local storage!");
 			}
 
 			var html = ace.edit("html");
@@ -30,7 +30,7 @@
 			html.getSession().setMode("ace/mode/html");//thiết lập ngôn ngữ
 	    html.getSession().setTabSize(4);//tab size mặc định
 	    document.getElementById('html').style.fontSize='16px';//font chữ
-	    html.insert("<!DOCTYPE html>\n<html>\n<head></head>\n<body>\n\t<h1>Trung Hồ Ngọc</h1>\n\t<button onclick='ahihi()'>ô cê</button>\n\t<script>\n\t\tfunction ahihi(){alert('bạn vừa click');}\n\t</"+"script>\n</body>\n</html>");
+	    html.insert("<!DOCTYPE html>\n<html>\n<head></head>\n<body>\n\t<h1>Trung Hồ Ngọc</h1>\n\t<button onclick='handleClick()'>Try to click</button>\n\t<script>\n\t\tfunction handleClick(){alert('The button be clicked');}\n\t</"+"script>\n</body>\n</html>");
 	    html.session.setUseWrapMode(true);//cài đặt số từ tối đa trên 1 dòng
 			html.session.setWrapLimitRange(60);
 
@@ -40,7 +40,7 @@
 				result.innerHTML = html.getValue();
 				// console.log(sessionStorage.html);
 				runScripts(result);
-			}else console.log("không có");
+			}else console.log("Missing sessionStorage.html");
 			
 			function active_DOM(){
 				sessionStorage.html = html.getValue();
